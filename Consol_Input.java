@@ -2,8 +2,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 
-public class Input implements KeyListener{	//Classe qui recupere les entree clavier de l'utilisateur
-	
+public class Consol_Input implements KeyListener{
+
 	@Override
     public void keyPressed(KeyEvent e) {
 		switch(e.getKeyCode()) {
@@ -11,14 +11,14 @@ public class Input implements KeyListener{	//Classe qui recupere les entree clav
 				break;
 			case KeyEvent.VK_LEFT:
 				break;
-			case KeyEvent.VK_UP:	//Si le joueur appuie sur la fleche du haut le joueur 1 monte 
-				if(Panneau.yPlayer>0) {	
-					Panneau.yPlayer -= 10;
+			case KeyEvent.VK_UP:	//Si le joueur appuie sur la fleche du haut le joueur 1 monte
+				if(Consol.player1Y>0) {
+					Consol.player1Y -= 1;
 				}
 				break;
 			case KeyEvent.VK_DOWN:	//Si le joueur appuie sur la fleche du bas le joueur 1 descend
-				if(Panneau.yPlayer + Panneau.yPlayerSize < Panneau.panneauSizeY) {
-					Panneau.yPlayer += 10;
+				if(Consol.player1Y + Consol.player1S < 10) {
+					Consol.player1Y += 1;
 				}
 				break;
 			case KeyEvent.VK_ENTER:
@@ -26,13 +26,13 @@ public class Input implements KeyListener{	//Classe qui recupere les entree clav
 			case KeyEvent.VK_SPACE:
 				break;
 			case KeyEvent.VK_NUMPAD8:	//Si le joueur appuie sur le 8 du pave numerique le joueur 2 monte
-				if(Panneau.yPlayer2>0 && Fenetre.TwoPlayers == true) {
-					Panneau.yPlayer2 -= 10;
+				if(Consol.player2Y>0 && Consol.twoPlayer == true) {
+					Consol.player2Y -= 1;
 				}
 				break;
 			case KeyEvent.VK_NUMPAD2:	//Si le joueur appuie sur le 2 du pave numerique le joueur 2 descend
-				if(Panneau.yPlayer2 + Panneau.yPlayer2Size < Panneau.panneauSizeY && Fenetre.TwoPlayers == true) {
-					Panneau.yPlayer2 += 10;
+				if(Consol.player2Y + Consol.player2S < 10 && Consol.twoPlayer == true) {
+					Consol.player2Y += 1;
 				}
 				break;
 		}
